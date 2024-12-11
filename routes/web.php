@@ -31,7 +31,6 @@ Route::middleware('auth')->group(function () {
 
 //Admin
 
-
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'admin_logout'])->name('admin.logout');
@@ -53,6 +52,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/admin/allRental', [RentalController::class, 'allRental'])->name('all.Rental');
+    Route::delete('/rentals/{id}', [RentalController::class, 'destroy'])->name('rentals.destroy');
+
 });
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
@@ -61,6 +62,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 // End Admin
+
+
+
+
 
 
 // Frontend Pages
@@ -79,6 +84,9 @@ Route::get('/setting', [PageController::class, 'setting'])->name('setting');
 Route::post('/update/setting', [PageController::class, 'updateSetting'])->name('update.setting');
 
 
+
+
+
 //Frontend Profile
 Route::middleware('auth')->group(function () {
 
@@ -87,3 +95,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete/{id}', [PageController::class, 'deleteBooking'])->name('booking.delete');
     Route::get('/user/pastBooking', [PageController::class, 'pastBookings'])->name('past.booking');
 });
+
+
+
+

@@ -28,6 +28,7 @@
                                     <th>End Date</th>
                                     <th>Total Cost</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,7 +54,18 @@
                                         <span class="btn btn-primary badge badge-secondary">Completed</span>
                                         @endif
                                     </td>
-                                    <td></td>
+                                    <td>
+                                    @if (\Carbon\Carbon::today()->lessThanOrEqualTo($rental->end_date))
+                                    <!-- Show Delete button only for Ongoing rentals -->
+                                    <form action="{{ route('rentals.destroy', $rental->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                        @else
+                                        <span class="text-muted">N/A</span>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @empty
                                 <tr>

@@ -201,7 +201,7 @@ $hotCars=App\Models\Car::orderBy('id', 'asc')->limit(3)->get();
 
 
         </div>
-
+        <div class="more-btn centred"><a href="{{route('rental')}}" class="theme-btn btn-one">View All Listing</a></div>
     </div>
 </section>
 <!-- deals-section end -->

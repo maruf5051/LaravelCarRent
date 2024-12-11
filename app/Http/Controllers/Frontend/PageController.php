@@ -39,10 +39,12 @@ class PageController extends Controller
     }
     function rental()
     {
-        $cars = Car::all();
-        return view('frontend.rental', compact('cars'));
+         $cars = Car::orderBy('daily_rent_price', 'asc')->get();
+         return view('frontend.rental', compact('cars'));
+        
     }
-
+  
+    
 
     function SeeDetails($id)
     {
@@ -214,11 +216,20 @@ class PageController extends Controller
             $query->where('daily_rent_price', '<=', $rent_max);
         }
 
+        if ($request->order_by) {
+            if ($request->order_by === 'price_asc') {
+                $query->orderBy('daily_rent_price', 'asc');
+            } elseif ($request->order_by === 'price_desc') {
+                $query->orderBy('daily_rent_price', 'desc');
+            }
+        }
+
         // Get the filtered results
         $cars = $query->get();
 
         return view('frontend.rental', compact('cars'));
     }
+    
     public function searchCars(Request $request)
     {
         // Retrieve the search input

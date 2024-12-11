@@ -21,8 +21,7 @@ return new class extends Migration
             $table->decimal('daily_rent_price', 8, 2); // Daily rent price (DECIMAL)
             $table->boolean('availability');        // Availability (BOOLEAN)
             $table->string('image')->nullable(); 
-            $table->timestamp('create_at')->useCurrent();
-            $table->timestamp('update_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamps(); // Stores the date when the car was deleted
         });
     }
 

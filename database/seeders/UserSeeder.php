@@ -17,14 +17,6 @@ class UserSeeder extends Seeder
         //
         User::create([
             'name' => 'Admin',
-            'email' => 'nibirhossain.cse@gmail.com',
-            'password' => Hash::make('password'), // Use Hash for password encryption
-            'role' => 'admin',
-
-        ]);
-
-        User::create([
-            'name' => 'Admin',
             'email' => 'sikder15-5051@diu.edu.bd',
             'password' => Hash::make('12345'), // Use Hash for password encryption
             'role' => 'admin',
@@ -33,8 +25,8 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Customer',
-            'email' => 'nibirhasan550@gmail.com',
-            'password' => Hash::make('password'),
+            'email' => 'marufsikder5051@gmail.com',
+            'password' => Hash::make('12345'),
             'role' => 'customer',
 
         ]);

@@ -67,6 +67,15 @@
                                         <label for="rent_max" class="form-label">Max Rent Price</label>
                                         <input type="number" name="rent_max" id="rent_max" class="form-control" placeholder="1000">
                                     </div>
+
+                                    <div class="select-box mt-3">
+                                        <select class="wide" name="order_by">
+                                            <option data-display="Order By">Order By</option>
+                                            <option value="price_asc">Price: Low to High</option>
+                                            <option value="price_desc">Price: High to Low</option>
+                                        </select>
+                                    </div>
+
                                 </div>
 
                                 <div class="filter-btn">
@@ -80,6 +89,7 @@
 
                 </div>
             </div>
+
             <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                 <div class="property-content-side">
 
@@ -129,6 +139,7 @@
 
                 </div>
             </div>
+
         </div>
     </div>
 </section>

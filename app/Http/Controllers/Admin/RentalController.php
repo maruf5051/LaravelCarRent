@@ -18,4 +18,13 @@ class RentalController extends Controller
 
         return view('admin.Rental.AllRental', compact('rentals'));
     }
+
+    public function destroy($id)
+    {
+        $rental = Rental::findOrFail($id);
+        $rental->delete();
+
+        return redirect()->back()->with('success', 'Rental deleted successfully.');
+    }
+
 }
