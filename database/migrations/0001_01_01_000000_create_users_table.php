@@ -21,13 +21,23 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->rememberToken();
+<<<<<<< HEAD
             $table->timestamps();
+=======
+            $table->timestamp('create_at')->useCurrent();
+            $table->timestamp('update_at')->useCurrent()->useCurrentOnUpdate();
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
+<<<<<<< HEAD
             $table->timestamps();
+=======
+            $table->timestamp('create_at')->useCurrent()->nullable();
+            $table->timestamp('update_at')->useCurrent()->useCurrentOnUpdate();
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
         });
 
         Schema::create('sessions', function (Blueprint $table) {

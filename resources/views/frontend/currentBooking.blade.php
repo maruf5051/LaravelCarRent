@@ -100,7 +100,11 @@
 
 <!-- subscribe-section -->
 <section class="subscribe-section bg-color-3">
+<<<<<<< HEAD
     <div class="pattern-layer" style="background-image: url({{asset('frontend')}}/images/shape/shape-2.png)"></div>
+=======
+    <div class="pattern-layer" style="background-image: url({{asset('frontend')}}/images/shape/shape-2.png);"></div>
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-6 col-sm-12 text-column">

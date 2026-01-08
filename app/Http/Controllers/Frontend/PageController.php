@@ -39,11 +39,20 @@ class PageController extends Controller
     }
     function rental()
     {
+<<<<<<< HEAD
         $cars = Car::orderBy('daily_rent_price', 'asc')->get();
         return view('frontend.rental', compact('cars'));
     }
 
 
+=======
+         $cars = Car::orderBy('daily_rent_price', 'asc')->get();
+         return view('frontend.rental', compact('cars'));
+        
+    }
+  
+    
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
 
     function SeeDetails($id)
     {
@@ -124,7 +133,11 @@ class PageController extends Controller
         Mail::to($email)->send(new RentalConfirmation($rental));
 
         // Send email to the admin
+<<<<<<< HEAD
         $adminEmail = 'sikder15-5051@diu.edu.bd'; // Replace with the actual admin email
+=======
+        $adminEmail = 'nibirhossain.cse@gmail.com'; // Replace with the actual admin email
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
         Mail::to($adminEmail)->send(new AdminConfirmation($rental));
 
         $notish = array(
@@ -228,7 +241,11 @@ class PageController extends Controller
 
         return view('frontend.rental', compact('cars'));
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 41162ada2a3eee592ad0f8f375ee8af514db09fb
     public function searchCars(Request $request)
     {
         // Retrieve the search input
